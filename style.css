@@ -183,7 +183,14 @@ cursor: pointer;
 
 /* ************ Multiplicación ************ */
 .multiplicacion span {
+  font-size: 4rem;
+}
+
+.valor-usuario {
+  width: 11rem;
+  height: 4rem;
   font-size: 3rem;
+  text-align: center;
 }
 
 .btn-multiplicacion {

@@ -11,7 +11,6 @@ d.addEventListener("DOMContentLoaded", (e) => {
 })
 
 
-
 /* ************ Números ************ */
 const numeros = document.querySelector("#mostrar-numeros");
 let inicio = document.querySelector("#inicio");
@@ -35,51 +34,6 @@ arrayNumeros.forEach((elemento, index) => {
   numeros.innerHTML += contenedorNumero;
 })
 
-/* ************ Multiplicación ************ */
-// const operacion = document.getElementById("operacion"),
-//   producto = document.querySelector("#producto"),
-//   btnResultadoMult= document.getElementById("btn-resultado-mult"),
-//   btnRefreshMult= document.getElementById("btn-refresh-mult"),
-//   arrayMultiplicando = [],
-//   arrayMultiplicador = [],
-//   arrayNumeroAleatorio = [];
-  
-// function crearNumerosAleatorio() {
-//   for (let i = 1; i <= 10; i++) {
-//     arrayMultiplicando.push(i);
-//     arrayMultiplicador.push(i);
-//   }
-// }
-// function refreshMult() {
-//   producto.innerHTML = "";
-//   if (arrayMultiplicando.length === 1 && arrayMultiplicador.length === 1) {
-//     crearNumerosAleatorio();
-//   }
-//   arrayMultiplicando.splice(indexMultiplicando, 1);
-//   indexMultiplicando = Math.floor(Math.random() * arrayMultiplicando.length);
-  
-//   arrayMultiplicador.splice(indexMultiplicador, 1);
-//   indexMultiplicador = Math.floor(Math.random() * arrayMultiplicador.length);
-
-//   operacion.innerHTML = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = `;
-
-//   randomProducto = arrayMultiplicando[indexMultiplicando] * arrayMultiplicador[indexMultiplicador];
-// }
-
-// function mostrarResultado () {
-//   producto.textContent = `${randomProducto}`;
-// }
-
-// crearNumerosAleatorio();
-
-// let indexMultiplicando = Math.floor(Math.random() * arrayNumeroAleatorio.length);
-// let indexMultiplicador = Math.floor(Math.random() * arrayNumeroAleatorio.length);
-// operacion.textContent = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = `;
-// let randomProducto = arrayMultiplicando[indexMultiplicando] * arrayMultiplicador[indexMultiplicador];
-
-// btnResultadoMult.addEventListener("click", mostrarResultado);
-// btnRefreshMult.addEventListener("click", refreshMult);
-
 /* ************ Vocales ************ */
 const vocalAleatoria = document.getElementById("vocal"),
   refreshVocal = document.getElementById("refresh-vocal"),
@@ -92,9 +46,9 @@ function cambiarVocal() {
   arrayVocales.splice(indexVocales, 1);
   indexVocales = Math.floor(Math.random() * arrayVocales.length);
   vocalAleatoria.textContent = arrayVocales[indexVocales];
-  console.log(`index: ${indexVocales}`);
-  console.log(`valor: ${arrayVocales[indexVocales]} `);
-  console.log(arrayVocales);
+  // console.log(`index: ${indexVocales}`);
+  // console.log(`valor: ${arrayVocales[indexVocales]} `);
+  // console.log(arrayVocales);
 }
 
 let indexVocales = Math.floor(Math.random() * arrayVocales.length);

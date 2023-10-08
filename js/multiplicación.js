@@ -22,7 +22,8 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
     indexMultiplicando = Math.floor(Math.random() * arrayMultiplicando.length);
     indexMultiplicador = Math.floor(Math.random() * arrayMultiplicador.length);
     resultado = arrayMultiplicando[indexMultiplicando] * arrayMultiplicador[indexMultiplicador];
-    d.getElementById(operacion).innerHTML = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = <input type="number" id="valor-usuario" placeholder="Ingresa un número">`;
+    d.getElementById(operacion).innerHTML = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = <input type="number" id="valor-usuario" class="valor-usuario">`;
+    d.querySelector(btnCambiar).disabled = true;
   }
 
   // Cambia los valores de cada factor de la multiplicación.
@@ -37,8 +38,14 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
   }
   
   // Muestra el resultado de la multiplicación en pantalla
-  function mostrarResultado () {
-    d.getElementById(producto).innerHTML = `${resultado}`;
+  function mostrarResultadoCorrecto () {
+    console.log(`${valorUsuario.value} es correcto`);
+    valorUsuario.disabled = true;
+  }
+
+  function mostrarResultadoIncorrecto () {
+    console.log(`${valorUsuario.value} no es correcto`);
+    valorUsuario.disabled = true;
   }
   
   crearArray();
@@ -49,15 +56,18 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
     if (e.target.matches(btnResultado)) {
       valorUsuario = d.getElementById("valor-usuario");
       if (parseFloat(valorUsuario.value) === resultado) {
-          mostrarResultado();
-          console.log(`${valorUsuario.value} es correcto`);
-        } else {
-          console.log(`${valorUsuario.value} no es el resultado`);
-        }
+        mostrarResultadoCorrecto();
+      } else {
+        mostrarResultadoIncorrecto();
+      }
+      e.target.disabled = true;
+      d.querySelector(btnCambiar).disabled = false;
     }
 
     if (e.target.matches(btnCambiar)) {
       cambiarMultiplicacion();
+      d.querySelector(btnResultado).disabled = false;
+      e.target.disabled = true;
     }
   })
 
@@ -66,11 +76,12 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
       if (e.keyCode === 13) {
         valorUsuario = d.getElementById("valor-usuario");
         if (parseFloat(valorUsuario.value) === resultado) {
-          mostrarResultado();
-          console.log(`${valorUsuario.value} es correcto`);
+          mostrarResultadoCorrecto();
         } else {
-          console.log(`${valorUsuario.value} no es el resultado`);
+          mostrarResultadoIncorrecto();
         }
+        d.querySelector(btnResultado).disabled = true;
+        d.querySelector(btnCambiar).disabled = false;
       }
     }
   })
