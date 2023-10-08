@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contar y Leer</title>
+  <title>Números y Letras</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- <section class="portada centrado">
-    <h1 class="title">Contar y leer</h1>
-  </section> -->
-  <input class="btn-input" type="checkbox">
-  <span class="material-symbols-outlined btn-burger-menu">menu</span>
-  <span class="material-symbols-outlined btn-close-menu">close</span>
+  <button class="panel-btn">
+    <span class="material-symbols-outlined panel-btn-menu">menu</span>
+    <span class="material-symbols-outlined panel-btn-close is-active">close</span>
+  </button>
 
-  <section class="menu-container">
-    <div class="menu">
-      <a href="index.html#numeros">Números</a>
-      <a href="index.html#numero-aleatorio">Número aleatorio</a>
-      <a href="index.html#imagen-aleatorio">Imagen aleatorio</a>
-      <a href="index.html#multiplicacion">Multiplicación</a>
-      <a href="index.html#vocales">Vocales</a>
-    </div>
-  </section>
+  <aside class="panel">
+    <nav class="menu">
+      <a href="#numeros">Números</a>
+      <a href="#numero-aleatorio">Número aleatorio</a>
+      <a href="#multiplicacion">Multiplicación</a>
+      <a href="#vocales">Vocales</a>
+    </nav>
+  </aside>
 
   <!-- ************ Números ************ -->
   <section class="change-window" id="numeros">
@@ -45,23 +42,8 @@
   <!-- ************ Número Aleatorio *********** -->
   <section class="change-window" id="numero-aleatorio">
     <div class="centrado">
-      <p class="numero-aleatorio" id="numero"></p>
-      <button class="material-symbols-outlined refresh-button boton" id="refresh">refresh</button>
-    </div>
-  </section>
-
-  <!-- ************ Imagen Aleatorio *********** -->
-  <section class="change-window" id="imagen-aleatorio">
-    <div class="centrado">
-      <div>
-        <button class="btn-img boton">Cambiar</button>
-      </div>
-      <div class="comtenedor-imagenes" id="contenedor-img">
-        <template></template>
-        <img src="./imagen/princess-peach.svg" alt="">
-        <img src="./imagen/princess-peach.svg" alt="">
-        <img src="./imagen/princess-peach.svg" alt="">
-      </div>
+      <p class="numero-aleatorio"></p>
+      <button class="material-symbols-outlined boton btn-aleatorio" id="refresh-aleatorio">refresh</button>
     </div>
   </section>
 
@@ -69,12 +51,12 @@
   <section class="change-window" id="multiplicacion">
     <div class="multiplicacion centrado">
       <div>
-        <span class="operacion" id="operacion"></span>
-        <span class="producto" id="producto"></span>
+        <span class="operacion" id="operacion-mult"></span>
+        <span class="producto" id="producto-mult"></span>
       </div>
       <div class="btn-multiplicacion">
-        <button class="boton btn-mult" id="btn-resultado-mult">resultado</button>
-        <button class="material-symbols-outlined boton btn-mult" id="btn-refresh-mult">refresh</button>
+        <button class="boton btn-mult" id="btn-resultado">resultado</button>
+        <button class="material-symbols-outlined boton btn-mult" id="btn-cambio">refresh</button>
       </div>
     </div>
   </section>
@@ -87,6 +69,6 @@
     </div>
   </section>
 
-  <script src="./main.js"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 </html>
