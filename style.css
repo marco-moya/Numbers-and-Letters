@@ -204,6 +204,46 @@ cursor: pointer;
   margin-top: 5rem;
 }
 
+.container-true, .container-false {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-true div {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3rem solid rgb(0, 125, 0);
+}
+
+.container-false div {
+  position: absolute;
+  width: 18rem;
+  height: 3rem;
+  background-color: red;
+  border-radius: 4rem;
+}
+
+.container-false div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.container-false div:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.container-true.is-active, .container-false.is-active{
+  display: none;
+}
+
 /* ************ Vocales ************ */
 .vocal-aleatoria {
   font-size: 18rem;

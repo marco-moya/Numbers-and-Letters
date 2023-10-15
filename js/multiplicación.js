@@ -38,12 +38,20 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
   }
   
   // Muestra el resultado de la multiplicación en pantalla
-  function mostrarResultadoCorrecto () {
+  function mostrarResultadoCorrecto() {
+    d.querySelector(".container-true").classList.toggle("is-active");
+    setTimeout(() => {
+      d.querySelector(".container-true").classList.toggle("is-active")
+    }, 800);
     console.log(`${valorUsuario.value} es correcto`);
     valorUsuario.disabled = true;
   }
 
-  function mostrarResultadoIncorrecto () {
+  function mostrarResultadoIncorrecto() {
+    d.querySelector(".container-false").classList.toggle("is-active");
+    setTimeout(() => {
+      d.querySelector(".container-false").classList.toggle("is-active")
+    }, 800);
     console.log(`${valorUsuario.value} no es correcto`);
     valorUsuario.disabled = true;
   }
