@@ -1,13 +1,13 @@
 const d = document;
 
-export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
+export function multiplicacion(operacion, btnResultado, btnCambiar, valorUsuario) {
   const arrayMultiplicando = [],
     arrayMultiplicador = [];
   
   let indexMultiplicando,
     indexMultiplicador,
     resultado,
-    valorUsuario;
+    $valorUsuario = d.getElementById(valorUsuario);
   
   // Crea dos array uno para el multiplicando y el otro para el multiplicador 
   function crearArray() {
@@ -22,13 +22,14 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
     indexMultiplicando = Math.floor(Math.random() * arrayMultiplicando.length);
     indexMultiplicador = Math.floor(Math.random() * arrayMultiplicador.length);
     resultado = arrayMultiplicando[indexMultiplicando] * arrayMultiplicador[indexMultiplicador];
-    d.getElementById(operacion).innerHTML = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = <input type="number" id="valor-usuario" class="valor-usuario">`;
+    d.getElementById(operacion).innerHTML = `${arrayMultiplicando[indexMultiplicando]} x ${arrayMultiplicador[indexMultiplicador]} = `;
     d.querySelector(btnCambiar).disabled = true;
   }
 
   // Cambia los valores de cada factor de la multiplicación.
   function cambiarMultiplicacion() {
-    d.getElementById(producto).innerHTML = "";
+    $valorUsuario.disabled = false;
+    $valorUsuario.value = "";
     if (arrayMultiplicando.length === 1 && arrayMultiplicador.length === 1) {
       crearArray();
     }
@@ -43,8 +44,11 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
     setTimeout(() => {
       d.querySelector(".container-true").classList.toggle("is-active")
     }, 800);
-    console.log(`${valorUsuario.value} es correcto`);
-    valorUsuario.disabled = true;
+    const $alarmCorrect = d.createElement("audio");
+      $alarmCorrect.src = "../assets/correct_choice.mp3";
+      $alarmCorrect.play();
+    console.log(`${$valorUsuario.value} es correcto`);
+    $valorUsuario.disabled = true;
   }
 
   function mostrarResultadoIncorrecto() {
@@ -52,18 +56,20 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
     setTimeout(() => {
       d.querySelector(".container-false").classList.toggle("is-active")
     }, 800);
-    console.log(`${valorUsuario.value} no es correcto`);
-    valorUsuario.disabled = true;
+    const $alarmIncorrect = d.createElement("audio");
+      $alarmIncorrect.src = "../assets/negative_choice.mp3";
+      $alarmIncorrect.play();
+    console.log(`${$valorUsuario.value} no es correcto`);
+    $valorUsuario.disabled = true;
   }
-  
+  $valorUsuario.focus();
   crearArray();
   calculo();
 
   // Eventos de click en los botones
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnResultado)) {
-      valorUsuario = d.getElementById("valor-usuario");
-      if (parseFloat(valorUsuario.value) === resultado) {
+      if (parseFloat($valorUsuario.value) === resultado) {
         mostrarResultadoCorrecto();
       } else {
         mostrarResultadoIncorrecto();
@@ -82,8 +88,7 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
   d.addEventListener("keydown", (e) => {
     if (e.target.matches("#valor-usuario")) {
       if (e.keyCode === 13) {
-        valorUsuario = d.getElementById("valor-usuario");
-        if (parseFloat(valorUsuario.value) === resultado) {
+        if (parseFloat($valorUsuario.value) === resultado) {
           mostrarResultadoCorrecto();
         } else {
           mostrarResultadoIncorrecto();
@@ -92,5 +97,10 @@ export function multiplicacion(operacion, producto, btnResultado, btnCambiar) {
         d.querySelector(btnCambiar).disabled = false;
       }
     }
+    if (e.keyCode === 32 && d.querySelector(btnCambiar).disabled === false) {
+        cambiarMultiplicacion();
+        d.querySelector(btnResultado).disabled = false;
+        d.querySelector(btnCambiar).disabled = true;
+      }
   })
 }

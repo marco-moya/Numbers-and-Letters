@@ -26,14 +26,13 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: var(--main-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
-
-
 
 /* ************ Estilos de menu ************ */
 .panel-btn{
@@ -182,15 +181,23 @@ cursor: pointer;
 }
 
 /* ************ Multiplicación ************ */
+.container-mult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .multiplicacion span {
   font-size: 4rem;
 }
 
-.valor-usuario {
+.input-valor {
   width: 11rem;
   height: 4rem;
   font-size: 3rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .btn-multiplicacion {
@@ -221,13 +228,13 @@ cursor: pointer;
   height: 18rem;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
-  border: 3rem solid rgb(0, 125, 0);
+  border: 2rem solid rgb(0, 125, 0);
 }
 
 .container-false div {
   position: absolute;
   width: 18rem;
-  height: 3rem;
+  height: 2rem;
   background-color: red;
   border-radius: 4rem;
 }
@@ -263,5 +270,29 @@ cursor: pointer;
 
   .multiplicacion span {
     font-size: 10rem;
+  }
+
+  .container-mult {
+    flex-direction: row;
+  }
+
+  .input-valor {
+    width: 14rem;
+    height: 8rem;
+    font-size: 6rem;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+
+  .container-true div {
+    width: 25rem;
+    height: 25rem;
+    border: 3rem solid rgb(0, 125, 0);
+  }
+
+  .container-false div {
+    width: 25rem;
+    height: 3rem;
   }
 }
