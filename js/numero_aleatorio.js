@@ -1,26 +1,43 @@
-export function numeroAleatorio(btnAleatorio) {
+export function numeroAleatorio() {
   const d = document,
     arrayNumeroAleatorio = [];
-  let index;
-
-  function crearArray() {
-    for (let i = 1; i <= 20; i++) {
-      arrayNumeroAleatorio.push(i);
-    }
-  }
   
-  crearArray();
-  index = Math.floor(Math.random() * arrayNumeroAleatorio.length);
-  d.querySelector(".numero-aleatorio").textContent = arrayNumeroAleatorio[index];
-
   d.addEventListener("click", (e) => {
-    if (e.target.matches(btnAleatorio)) {
-      if (arrayNumeroAleatorio.length === 1) {
-       crearArray();
+    let index,
+      inputInicial = d.querySelector("#valor-inicial").value,
+      inputFinal = d.querySelector("#valor-final").value,
+      valorInicial,
+      valorFinal;
+      valorInicial = parseFloat(inputInicial);
+      valorFinal = parseFloat(inputFinal);
+    
+    index = Math.floor(Math.random() * arrayNumeroAleatorio.length);
+    console.log(index);
+
+    function crearArray() {
+      for (let i = valorInicial; i <= valorFinal; i++) {
+        arrayNumeroAleatorio.push(i);
       }
-      arrayNumeroAleatorio.splice(index, 1);
-      index = Math.floor(Math.random() * arrayNumeroAleatorio.length);
-      d.querySelector(".numero-aleatorio").textContent = arrayNumeroAleatorio[index];
+    }
+    
+    if (e.target.matches(".btn-aleatorio") || e.target.matches(".icon-refresh")) {
+      
+      if (arrayNumeroAleatorio.length === 0) {
+        crearArray();
+        console.log(arrayNumeroAleatorio);
+        console.log("valor:", arrayNumeroAleatorio[index],"Index:", index);
+        return d.querySelector(".numero-aleatorio").textContent = arrayNumeroAleatorio[index];
+      }
+      
+      console.log(arrayNumeroAleatorio);
+      console.log("valor:", arrayNumeroAleatorio[index], "Index:", index);
+      
+      // else {
+      //   arrayNumeroAleatorio.splice(index, 1);
+      //   d.querySelector(".numero-aleatorio").textContent = arrayNumeroAleatorio[index];
+      //   console.log(arrayNumeroAleatorio);
+      //   console.log("valor:", arrayNumeroAleatorio[index], "Index:", index);
+      // }
     }  
   })
 }

@@ -6,7 +6,7 @@ const d = document;
 
 d.addEventListener("DOMContentLoaded", (e) => {
   hamburgerMenu(".panel-btn", ".panel", ".menu a");
-  numeroAleatorio(".btn-aleatorio", ".numero-aleatorio");
+  numeroAleatorio();
   multiplicacion("operacion-mult", "#btn-resultado", "#btn-cambio", "valor-usuario");
 })
 

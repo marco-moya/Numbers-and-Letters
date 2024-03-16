@@ -9,72 +9,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button class="panel-btn">
-    <span class="material-symbols-outlined panel-btn-menu">menu</span>
-    <span class="material-symbols-outlined panel-btn-close is-active">close</span>
-  </button>
 
-  <aside class="panel">
+  <main class="main">
+    <h1>Números y Letras</h1>
     <nav class="menu">
-      <a href="#numeros">Números</a>
-      <a href="#numero-aleatorio">Número aleatorio</a>
-      <a href="#multiplicacion">Multiplicación</a>
-      <a href="#vocales">Vocales</a>
+      <a href="./numero_aleatorio.html">Número aleatorio</a>
+      <a href="./multiplicación.html">Multiplicación</a>
+      <!-- <a href="#vocales">Vocales</a> -->
     </nav>
-  </aside>
-
-  <!-- ************ Números ************ -->
-  <section class="change-window" id="numeros">
-    <div class="centrado">
-      <div class="rango-numeros">
-        <p>Selecciona un rango de números</p>
-        <div class="input-numeros">
-          <input id="inicio" type="number">
-          <input id="fin" type="number">
-        </div>
-        <button class="btn-aceptar boton" onclick="guardarNumeros()">Aceptar</button>
-      </div>
-      <div class="numeros" id="mostrar-numeros">
-      </div>
-    </div>
-  </section>
-
-  <!-- ************ Número Aleatorio *********** -->
-  <section class="change-window" id="numero-aleatorio">
-    <div class="centrado">
-      <p class="numero-aleatorio"></p>
-      <button class="material-symbols-outlined boton btn-aleatorio" id="refresh-aleatorio">refresh</button>
-    </div>
-  </section>
-
-  <!-- ************ Multiplicación ************ -->
-  <section class="change-window" id="multiplicacion">
-    <div class="multiplicacion centrado">
-      <div class="container-mult">
-        <span class="operacion" id="operacion-mult"></span>
-        <input type="number" class="input-valor" id="valor-usuario" autofocus>
-      </div>
-      <div class="btn-multiplicacion">
-        <button class="boton btn-mult" id="btn-resultado">resultado</button>
-        <button class="material-symbols-outlined boton btn-mult" id="btn-cambio">refresh</button>
-      </div>
-      <div class="container-true is-active">
-        <div></div>
-      </div>
-      <div class="container-false is-active">
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ************ Vocales ************ -->
-  <section class="change-window" id="vocales">
+  <!-- <section class="change-window" id="vocales">
     <div class="centrado">
       <p class="vocal-aleatoria" id="vocal"></p>
       <button class="material-symbols-outlined vocal-button boton" id="refresh-vocal">refresh</button>
     </div>
-  </section>
+  </section> -->
 
   <script src="./js/main.js" type="module"></script>
 </body>
