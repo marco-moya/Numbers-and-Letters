@@ -1,0 +1,370 @@
+/* ************ Reset CSS ************ */
+:root {
+  --main-font:sans-serif;
+  --font-size: 16px;
+  --main-color: #008b8b;
+  --main-color-modal: #004141a5;
+  --second-color: #ffebcd;
+  --second-modal-color: #ffebcdbe;
+  --text-color: #f4f4f4;
+  --text-color-modal: #004141a5;
+  --white: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Estilos para el menú de navegación */
+
+.off-canvas-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  &:checked + .off-canvas-burger {
+    background-color: transparent;
+    &::before {
+      /* background-color: var(--second-color); */
+      transform: rotate(45deg) translate(0, 0);
+    };
+    &::after {
+      /* background-color: var(--second-color); */
+      transform: rotate(-45deg) translate(0.25rem, -0.3rem);
+    }
+  };
+  &:checked ~ .off-canvas-menu {
+    transform: translate(0, 0);
+  };
+  &:checked ~ .title-header {
+    color: var(--second-color);
+    font-size: var(--fs-2);
+    transition: color 800ms ease, font-size 500ms ease 100ms;
+  }
+}
+
+.off-canvas-burger {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1rem;
+  z-index: 8;
+  width: 2rem;
+  height: 0.4rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  transform: rotate(0deg) translate(0, 0.8rem);
+  transform-origin: top left;
+  transition: transform 500ms ease, background-color 500ms ease;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.4rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+  };
+  &::before {
+    transform: rotate(0deg) translate(0, -0.7rem);
+  };
+  &::after {
+    transform: rotate(0deg) translate(0, 0.3rem);
+  }
+}
+
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 7;
+  background-image: linear-gradient(225deg, rgba(83,113,136,1) 0%, rgba(121,178,203,1) 38%, rgba(3,159,190,1) 69%, rgba(0,213,255,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 300ms ease-in-out;
+  transform: translateX(100%);
+}
+
+.off-canvas-menu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.off-canvas-link {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--second-color);
+  border-bottom: thin solid #000;
+  font-size: var(--fs-1);
+  &:first-child {
+    border-top: thin solid #000;
+  }
+  &:hover {
+    color: #000;
+    font-weight: 500;
+  }
+}
+
+/* ************ Número Aleatorio ********** */
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.form-container {
+  display: flex;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.input-container > input {
+  width: 100px;
+  margin-top: 0.5rem;
+}
+
+.number_random {
+  font-size: 15rem;
+}
+
+.btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  & > img {
+    display: block;
+  }
+}
+
+/* ************ Multiplicación ************ */
+.mult {
+  display: flex;
+  flex-direction: column;
+}
+
+.mult-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.mult span {
+  font-size: 4rem;
+}
+
+.input-valor {
+  width: 11rem;
+  height: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mult__btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mult__btn-result {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: none;
+  background-color: rgb(255, 235, 205);
+  box-shadow: 0 8px 8px rgba(255, 235, 205, 0.6), 0 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.mult-btn {
+  margin-top: 4rem;
+}
+
+.container-true, .container-false {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-true div {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2rem solid rgb(0, 125, 0);
+}
+
+.container-false div {
+  position: absolute;
+  width: 18rem;
+  height: 2rem;
+  background-color: red;
+  border-radius: 4rem;
+}
+
+.container-false div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.container-false div:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.container-true.is-active, .container-false.is-active{
+  display: none;
+}
+
+/* ************ Abecedario ************ */
+.main-container {
+  justify-content: space-evenly;
+}
+
+.letter-alphabet {
+  font-size: 8rem;
+  font-family: serif;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+/* ************ Media queries ************ */
+
+@media screen and (min-width: 480px) {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .off-canvas-menu {
+    position: static;
+    background-image: none;
+    transform: translateX(0);
+  }
+
+  .off-canvas-menu-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .off-canvas-link {
+    padding: 0 1rem;
+    text-align: center;
+    color: var(--second-color);
+    border-bottom: none;
+    font-size: var(--fs-1);
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .off-canvas-btn,
+  .off-canvas-burger {
+    display: none;
+  }
+
+  .numeros {
+    font-size: 5rem;
+  }
+
+  .number_random {
+    font-size: 24rem;
+  }
+
+  .mult span {
+    font-size: 10rem;
+  }
+
+  .mult-container {
+    flex-direction: row;
+  }
+
+  .input-valor {
+    width: 14rem;
+    height: 8rem;
+    font-size: 6rem;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+
+  .container-true div {
+    width: 25rem;
+    height: 25rem;
+    border: 3rem solid rgb(0, 125, 0);
+  }
+
+  .container-false div {
+    width: 25rem;
+    height: 3rem;
+  }
+
+  /* ************ Abecedario ************ */
+
+  .letter-alphabet {
+    font-size: 18rem;
+    letter-spacing: 1.5rem;
+  }
+}

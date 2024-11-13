@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Números y Letras</title>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>Multiplicación</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -26,10 +24,27 @@
     </nav>
   </header>
 
-  <main class="main-container">
-    <h1>Números y Letras</h1>
+  <main class="main-container" id="multiply-page">
+    <div class="mult">
+      <div class="mult-container">
+        <span id="operation-mult"></span>
+        <input type="number" class="input-valor" id="value-user" autofocus>
+      </div>
+      <div class="mult__btn-container">
+        <button class="mult__btn-result mult-btn" id="btn-result">resultado</button>
+        <button class="material-symbols-outlined boton mult-btn btn" id="btn-change">
+          <img src="./assets/images/refresh_FILL0_wght400_GRAD0_opsz24.svg" alt="icon refresh">
+        </button>
+      </div>
+      <div class="container-true is-active">
+        <div></div>
+      </div>
+      <div class="container-false is-active">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </main>
-
   <script src="./js/main.js" type="module"></script>
 </body>
 </html>
