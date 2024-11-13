@@ -290,7 +290,7 @@ img {
 
 /* ************ Media queries ************ */
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 40rem) {
 
   .header {
     display: flex;
