@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Números y Letras</title>
+  <title>Syllables</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +30,34 @@
     </nav>
   </header>
 
-  <main class="main-container main-alphabet" id="alphabet-page">
-    <p class="letter-alphabet" id="letter-random"></p>
-    <button class="btn btn-alphabet" id="change-letter">
+  <main class="main-container main-syllables" id="syllables-page">
+    <form class="form-syllables" id="form">
+      <section class="check-allboxes">
+        <div class="">
+          <label for="selectAll">Seleccionar todo</label>
+          <input type="radio" name="toggle" id="selectAll" value="select" checked="true">
+        </div>
+        <div class="">
+          <label for="deselectAll">Quitar todo</label>
+          <input type="radio" name="toggle" id="deselectAll" value="deselect">
+        </div>
+      </section>
+      <section class="checkbox-consonant" id="consonants">
+      </section>
+    </form>
+    <p class="error-message " id="error-message"></p>
+    <template id="template">
+      <div class="">
+        <label></label>
+        <input type="checkbox" name="" class="consonant" id="">
+      </div>
+    </template>
+    <p class="syllable-random" id="syllable-random"></p>
+    <button class="btn btn-syllables" id="change-syllable">
       <img src="./assets/images/refresh_FILL0_wght400_GRAD0_opsz24.svg" alt="icon refresh">
     </button>
   </main>
 
-  <script src="./js/main.js" type="module"></script>
+   <script src="./js/main.js" type="module"></script>
 </body>
 </html>

@@ -29,11 +29,11 @@ export function alphabetRandom() {
     }
   });
 
-  d.addEventListener("keydown", e => {
+  d.addEventListener("keyup", e => {
     if (e.keyCode === 32) {
       changeLetter();
     }
-  })
+  });
 }
 
 

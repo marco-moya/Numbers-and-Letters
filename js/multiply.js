@@ -89,7 +89,7 @@ export function multiplicacion() {
   })
 
   // Eventos de keydown en los botones
-  d.addEventListener("keydown", (e) => {
+  d.addEventListener("keyup", (e) => {
     if (e.target.matches("#value-user")) {
       if (e.keyCode === 13) {
         if (parseFloat($valueUser.value) === result) {
