@@ -80,7 +80,7 @@ export function multiplicacion() {
       $btnChange.disabled = false;
     }
 
-    if (e.target.matches("#btn-change") || e.target.matches("#btn-change img")) {
+    if (e.target.matches("#btn-change") || e.target.matches("#btn-change i")) {
       cambiarMultiplicacion();
       $valueUser.focus();
       $btnResult.disabled = false;

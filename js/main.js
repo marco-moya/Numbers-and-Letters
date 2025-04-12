@@ -1,5 +1,6 @@
 import hamburgerMenu from "./menu_hamburguesa.js";
 import { numberRandom } from "./number_random.js";
+import { sum } from "./sum.js";
 import { multiplicacion } from "./multiply.js";
 import { alphabetRandom } from "./alphabet_random.js";
 import { syllablesRandom } from "./syllables.js";
@@ -14,6 +15,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     numberRandom();
   } else if (document.getElementById("multiply-page")) {
     multiplicacion();
+  } else if (document.getElementById("sum-page")) {
+    sum();
   } else if (document.getElementById("alphabet-page")) {
     alphabetRandom();
   } else if (document.getElementById("syllables-page")) {

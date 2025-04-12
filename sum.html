@@ -28,10 +28,31 @@
     </nav>
   </header>
 
-  <main class="main-container">
-    <h1>Números y Letras</h1>
+  <main class="main-container" id="sum-page">
+    <form action="" class="form-sum-container">
+      <div class="Addend-container">
+        <label for="" id="addend1">1234</label>
+        <label for="" id="addend2">5678</label>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="input-sum-container">
+        <input type="number" value="" min="0" max="9">
+        <input type="number" value="" min="0" max="9">
+        <input type="number" value="" min="0" max="9">
+        <input type="number" value="" min="0" max="9">
+        <input type="number" value="" min="0" max="9">
+      </div>
+      <div class="btn-sum-container">
+        <button type="button" class="btn btn-result btn-mul" id="btn-sum-result">Evaluar</button>
+        <p class="sum-result hidden" id="sum-result">Respuesta</p>
+        <button type="button" class="btn" id="btn-reset-sum">
+          <i class="fa-solid fa-arrow-rotate-right"></i>
+        </button>
+      </div>
+    </form>
   </main>
 
   <script src="./js/main.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/aaed170742.js" crossorigin="anonymous"></script>
 </body>
 </html>
