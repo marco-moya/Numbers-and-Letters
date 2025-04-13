@@ -30,26 +30,62 @@
 
   <main class="main-container" id="sum-page">
     <form action="" class="form-sum-container">
-      <div class="Addend-container">
-        <label for="" id="addend1">1234</label>
-        <label for="" id="addend2">5678</label>
-        <span class="plus-sign">+</span>
-      </div>
-      <div class="input-sum-container">
-        <input type="number" value="" min="0" max="9">
-        <input type="number" value="" min="0" max="9">
-        <input type="number" value="" min="0" max="9">
-        <input type="number" value="" min="0" max="9">
-        <input type="number" value="" min="0" max="9">
-      </div>
+      <div class="addend-container"></div>
+      <div class="input-sum-container"></div>
       <div class="btn-sum-container">
         <button type="button" class="btn btn-result btn-mul" id="btn-sum-result">Evaluar</button>
-        <p class="sum-result hidden" id="sum-result">Respuesta</p>
-        <button type="button" class="btn" id="btn-reset-sum">
+        <p class="sum-result hidden" id="sum-result">Res</p>
+        <button type="button" class="btn" id="btn-sum-reset">
           <i class="fa-solid fa-arrow-rotate-right"></i>
         </button>
       </div>
+      <button type="button" class="btn btn-edit" id="btn-sum-edit">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
     </form>
+    <section class="modal sum-edit-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Editar Suma</h2>
+        </div>
+        <div class="modal-body">
+          <div class="modal-section">
+            <p>Columnas</p>
+            <div class="modal-controls">
+              <button type="button" class="btn" id="btn-decrease-colum">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="modal-value" id="value-column"></span>
+              <button type="button" class="btn" id="btn-increase-colum">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-section">
+            <p>Filas</p>
+            <div class="modal-controls">
+              <button type="button" class="btn" id="btn-decrease-row">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="modal-value" id="value-row"></span>
+              <button type="button" class="btn" id="btn-increase-row">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-close" id="btn-sum-edit-close">Aceptar</button>
+        </div>
+      </div>
+    </section>
+    <div class="container-true is-active">
+      <div></div>
+    </div>
+    <div class="container-false is-active">
+      <div></div>
+      <div></div>
+    </div>
   </main>
 
   <script src="./js/main.js" type="module"></script>
