@@ -1,6 +1,5 @@
-const d = document;
-
 export function multiplicacion() {
+  const d = document;
   const arrayMultiplication = [],
     arrayMultiplier = [],
     $btnChange = d.querySelector("#btn-change"),

@@ -8,8 +8,6 @@ export function numberRandom() {
     valueInitial = parseFloat(inputInitial.value),
     valueFinal = parseFloat(inputFinal.value);
   
-  //console.log(valueInitial, valueFinal);
-  
   function createArray() {
     for (let i = valueInitial; i <= valueFinal; i++) {
       arrayNumberRandom.push(i);
@@ -42,15 +40,10 @@ export function numberRandom() {
   });
 
   d.addEventListener("click", (e) => {
-    if (e.target.matches("#btn-random") || e.target.matches("#btn-random img")) {
+    if (e.target.matches("#btn-random") || e.target.matches("#btn-random i")) {
       showNumber();
-      //console.log(arrayNumberRandom);
-      //console.log(index);
       reduceArray();
-      //console.log(arrayNumberRandom);
-      
       if (arrayNumberRandom.length === 0) {
-        //console.log("Rango inválido");
         createArray();
         return;
       }
@@ -60,13 +53,9 @@ export function numberRandom() {
   d.addEventListener("keyup", (e) => {
     if (e.keyCode === 32) {
       showNumber();
-      //console.log(arrayNumberRandom);
-      //console.log(index);
       reduceArray();
-      //console.log(arrayNumberRandom);
     }
     if (arrayNumberRandom.length === 0) {
-      //console.log("Rango inválido");
       createArray();
       return;
     }

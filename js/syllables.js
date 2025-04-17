@@ -1,6 +1,5 @@
-const d = document;
-
 export function syllablesRandom() {
+  const d = document;
   const $consonantsContent = d.getElementById("consonants"),
     $template = d.getElementById("template").content,
     $fragment = d.createDocumentFragment(),
@@ -43,8 +42,6 @@ export function syllablesRandom() {
     if (consonants.length !== 0) d.getElementById("error-message").innerText = "";
     indexSyllables = Math.floor(Math.random() * syllables.length);
     d.getElementById("syllable-random").innerText = syllables[indexSyllables];
-    console.log(`Result: ${syllables[indexSyllables]}`);
-    console.log(syllables);
   }
 
   // Función para reducir el array vowell
@@ -69,18 +66,14 @@ export function syllablesRandom() {
       checkbox.checked = select;
       if (checkbox.checked) {
         consonants.push(checkbox.name);
-        console.log(consonants);
       } else {
         consonants = [];
-        console.log(`silabas vacías`, consonants);
       }
     });
     if (consonants.length > 0) createSyllables();
-    //if (select) createSyllables();
   }
   // Función para seleccionar o desmarcar un checkbox
   function checkboxes() {
-    //consonants = [];
     if ($selectAllRadio.checked) {
       consonants = [];
       toggleCheckboxes(true); // Marcar todos al recargar la página
@@ -100,7 +93,6 @@ export function syllablesRandom() {
     });
   }
 
-  console.log($checkboxes);
   checkboxes();
 
   $selectAllRadio.addEventListener('change', () => {
@@ -117,7 +109,7 @@ export function syllablesRandom() {
   });
 
   d.addEventListener("click", e => {
-    if (e.target.matches("#change-syllable") || e.target.matches("#change-syllable img")) {
+    if (e.target.matches("#change-syllable") || e.target.matches("#change-syllable i")) {
       changeSyllable();
     }
   });

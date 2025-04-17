@@ -50,11 +50,10 @@ img {
 }
 
 /* Estilos para el menú de navegación */
-
 .off-canvas-btn {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 2.5rem;
+  right: 2rem;
   z-index: 9;
   width: 2rem;
   height: 2rem;
@@ -63,11 +62,9 @@ img {
   &:checked + .off-canvas-burger {
     background-color: transparent;
     &::before {
-      /* background-color: var(--second-color); */
       transform: rotate(45deg) translate(0, 0);
     };
     &::after {
-      /* background-color: var(--second-color); */
       transform: rotate(-45deg) translate(0.25rem, -0.3rem);
     }
   };
@@ -83,8 +80,8 @@ img {
 
 .off-canvas-burger {
   position: fixed;
-  bottom: 2.5rem;
-  right: 1rem;
+  bottom: 4rem;
+  right: 2rem;
   z-index: 8;
   width: 2rem;
   height: 0.4rem;
@@ -134,15 +131,23 @@ img {
 .off-canvas-link {
   padding: 1.5rem;
   text-align: center;
+  letter-spacing: 1px;
   color: var(--second-color);
+  color: #000;
   border-bottom: thin solid #000;
-  font-size: var(--fs-1);
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
   &:first-child {
     border-top: thin solid #000;
   }
   &:hover {
+    color: var(--text-color-modal);
+    font-weight: 700;
+  }
+  &.active {
     color: #000;
-    font-weight: 500;
+    color: var(--text-color);
+    font-weight: 700;
   }
 }
 
@@ -203,7 +208,6 @@ img {
 
 
 /* ************ Número Aleatorio ********** */
-
 .main-container {
   width: 100%;
   display: flex;
@@ -239,6 +243,8 @@ img {
 
 /* ************ Suma ************ */
 .form-sum-container {
+  width: 80%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,32 +252,38 @@ img {
 }
 
 .addend-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   font-size: 3rem;
-  border-bottom: 3px solid;;
   position: relative;
   & label {
+    padding-left: 2rem;
     text-align: end;
     letter-spacing: 1.5rem;
   }
   & .plus-sign {
     position: absolute;
     bottom: calc(50% - 1.5rem);
-    left: -3rem;
+    left: -1rem;
+  }
+  & :nth-child(n):last-child {
+    border-bottom: 3px solid;
+    padding-bottom: 0.5rem;
   }
 }
 
 .input-sum-container {
-  padding-right: 0.5rem;
+  width: 100%;
+  padding-right: 2rem;
   margin: 1rem 0;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  gap: 0.3rem;
   & input {
     width: 3rem;
     height: 3rem;
-    margin-right: 0.3rem;
     font-size: 3rem;
     text-align: center;
     border: none;
@@ -298,13 +310,12 @@ img {
 
 .btn-edit {
   padding: 0.4rem;
-  position: absolute;
-  top: -3rem;
-  right: -4rem;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
   border: none;
   background-color: transparent;
   & i{
-    font-size: 1.5rem;
     color: var(--second-color);
     color: var(--text-color);
   }
@@ -511,16 +522,21 @@ img {
     width: 100%;
     display: flex;
     flex-direction: row;
+    gap: 1rem;
   }
 
   .off-canvas-link {
-    padding: 0 1rem;
+    padding: 0;
     text-align: center;
     color: var(--second-color);
     border-bottom: none;
     font-size: var(--fs-1);
+    font-weight: 700;
     &:first-child {
       border-top: none;
+    }
+    &.active {
+      border-bottom: 2px solid var(--text-color);
     }
   }
 
@@ -529,18 +545,19 @@ img {
     display: none;
   }
 
-/* ************ Números ************ */
-
+  /* ************ Números ************ */
   .numeros {
     font-size: 5rem;
   }
-
   .number_random {
     font-size: 18rem;
   }
 
-/* ************ Multiplicación ************ */
-
+  /* ************ Multiplicación ************ */
+  .form-sum-container {
+    margin: 2rem 0;
+  }
+  /* ************ Multiplicación ************ */
   .mult span {
     font-size: 10rem;
   }
@@ -570,7 +587,6 @@ img {
   }
 
   /* ************ Abecedario ************ */
-  
   .letter-alphabet {
     font-size: 18rem;
     letter-spacing: 1.5rem;

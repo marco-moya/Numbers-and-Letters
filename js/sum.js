@@ -1,6 +1,5 @@
-const d = document;
-
 export function sum() {
+  const d = document;
   const sumForm = d.querySelector(".form-sum-container");
   const $addendContainer = d.querySelector(".addend-container");
   const $inputSumContainer = d.querySelector(".input-sum-container");
@@ -12,11 +11,55 @@ export function sum() {
   let row = 2;
   let sumTotal;
   let userSumTotal;
-  
+
+  function adjustSize(elemento) {
+    const $contenedor = document.querySelector(elemento);
+    const fontSizeInicial = 48; // Tamaño de fuente inicial
+    const $inputs = $inputSumContainer.querySelectorAll("input[type='number']");
+    let fontSize = parseInt(window.getComputedStyle($contenedor).fontSize);
+    
+    // Ajustar el tamaño del Gap según el número de columnas
+    if (column === 8) {
+      $inputSumContainer.style.columnGap = "0.5rem";
+      $inputSumContainer.style.rowGap = "0.5rem";
+    } else if (column === 9) {
+      $inputSumContainer.style.columnGap = "0.6rem";
+      $inputSumContainer.style.rowGap = "0.6rem";
+    } else {
+      $inputSumContainer.style.columnGap = "0.3rem";
+      $inputSumContainer.style.rowGap = "0.3rem";
+    }
+    
+    // Reducir el tamaño de fuente si el contenido desborda
+    while (($contenedor.scrollHeight > $contenedor.clientHeight || $contenedor.scrollWidth > $contenedor.clientWidth) && fontSize > 32) {
+      fontSize--;
+      $contenedor.style.fontSize = fontSize + "px";
+      $sumResult.style.fontSize = fontSize + "px";
+    }
+    
+    // Incrementar el tamaño de fuente si el contenido no desborda y no ha alcanzado el tamaño inicial
+    while (($contenedor.scrollHeight <= $contenedor.clientHeight && $contenedor.scrollWidth <= $contenedor.clientWidth) && fontSize < fontSizeInicial) {
+      fontSize++;
+      $contenedor.style.fontSize = fontSize + "px";
+      $sumResult.style.fontSize = fontSize + "px";
+    }
+
+    // Ajustar el tamaño de los inputs
+    $inputs.forEach(input => {
+      input.style.fontSize = `${fontSize}px`;
+      input.style.width = `${parseFloat(fontSize) }px`;
+      input.style.height = `${parseFloat(fontSize) }px`;
+    });
+  }
+
   function resetAddends() {
-    sumTotal = 0;
     $addendContainer.innerHTML = "";
     $inputSumContainer.innerHTML = "";
+    const $span = d.createElement("span");
+    $span.classList.add("plus-sign");
+    $span.textContent = "+";
+    $addendContainer.appendChild($span);
+    sumTotal = 0;
     for (let i = 0; i < row; i++) {
       const $label = d.createElement("label");
       $label.setAttribute("id", `addend${i + 1}`);
@@ -32,10 +75,7 @@ export function sum() {
       $input.setAttribute("max", `${9}`);
       $inputSumContainer.appendChild($input);
     }
-    const $span = d.createElement("span");
-    $span.classList.add("plus-sign");
-    $span.textContent = "+";
-    $addendContainer.appendChild($span);
+    adjustSize(".addend-container");
   }
 
   function sumAddends() {
@@ -44,8 +84,8 @@ export function sum() {
 
   function evaluateSum() {
     const inputValues = [];
-    const $inputsSum = d.querySelectorAll("input[type='number']");
-    $inputsSum.forEach((input) => {
+    const $inputs = $inputSumContainer.querySelectorAll("input[type='number']");;
+    $inputs.forEach((input) => {
       if (input.value == "") input.value = 0;
       inputValues.push(input.value);
     });
@@ -80,7 +120,7 @@ export function sum() {
   $valueColumn.textContent = column;
   $valueRow.textContent = row;
   resetAddends();
-  
+
   $inputSumContainer.addEventListener("input", (e) => {
     if (e.target.matches("input[type='number']")) {
       const value = e.target.value;
