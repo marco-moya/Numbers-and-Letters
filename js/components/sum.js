@@ -103,7 +103,7 @@ export function sum() {
       d.querySelector(".container-true").classList.toggle("is-active")
     }, 800);
     const $alarmCorrect = d.createElement("audio");
-    $alarmCorrect.src = "../assets/correct_choice.mp3";
+    $alarmCorrect.src = "../../assets/audio/correct_choice.mp3";
     $alarmCorrect.play();
   }
 
@@ -113,7 +113,7 @@ export function sum() {
       d.querySelector(".container-false").classList.toggle("is-active")
     }, 800);
     const $alarmIncorrect = d.createElement("audio");
-    $alarmIncorrect.src = "../assets/negative_choice.mp3";
+    $alarmIncorrect.src = "../../assets/audio/negative_choice.mp3";
     $alarmIncorrect.play();
   }
   

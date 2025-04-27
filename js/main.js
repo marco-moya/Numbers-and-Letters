@@ -1,10 +1,10 @@
-import hamburgerMenu from "./menu_hamburguesa.js";
-import { numberRandom } from "./number_random.js";
-import { sum } from "./sum.js";
-import { subtraction } from "./subtraction.js";
-import { multiplicacion } from "./multiply.js";
-import { alphabetRandom } from "./alphabet_random.js";
-import { syllablesRandom } from "./syllables.js";
+import hamburgerMenu from "./components/menu_hamburguesa.js";
+import { numberRandom } from "./components/number_random.js";
+import { sum } from "./components/sum.js";
+import { subtraction } from "./components/subtraction.js";
+import { multiplicacion } from "./components/multiply.js";
+import { alphabetRandom } from "./components/alphabet_random.js";
+import { syllablesRandom } from "./components/syllables.js";
 
 const d = document;
 
@@ -26,3 +26,5 @@ d.addEventListener("DOMContentLoaded", (e) => {
     syllablesRandom();
   }
 })
+
+console.log("Página cargada correctamente.");
