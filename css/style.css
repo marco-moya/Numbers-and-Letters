@@ -242,7 +242,8 @@ img {
 }
 
 /* ************ Suma ************ */
-.form-sum-container {
+.form-sum-container,
+.form-subtraction-container {
   width: 80%;
   max-width: 400px;
   display: flex;
@@ -263,10 +264,11 @@ img {
     text-align: end;
     letter-spacing: 1.5rem;
   }
-  & .plus-sign {
+  & .plus-sign,
+    .minus-sign {
     position: absolute;
     bottom: calc(50% - 1.5rem);
-    left: -1rem;
+    left: 2rem;
   }
   & :nth-child(n):last-child {
     border-bottom: 3px solid;
@@ -274,7 +276,8 @@ img {
   }
 }
 
-.input-sum-container {
+.input-sum-container,
+.input-subtraction-container {
   width: 100%;
   padding-right: 2rem;
   margin: 1rem 0;
@@ -295,12 +298,14 @@ img {
   }
 }
 
-.btn-sum-container {
+.btn-sum-container,
+.btn-subtraction-container {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  & .sum-result {
+  & .sum-result,
+    .subtraction-result{
     margin: 3rem 0;
     font-size: 3rem;
     letter-spacing: 0.5rem;
@@ -332,7 +337,8 @@ img {
   }
 }
 
-.sum-edit-container {
+.sum-edit-container,
+.subtraction-edit-container {
   position: absolute;
   top: 0;
   right: 0;
@@ -385,6 +391,11 @@ img {
 
 .hidden {
   opacity: 0;
+}
+
+/* ************ Resta ************ */
+.input-subtraction-container {
+  padding: 0;
 }
 
 /* ************ Multiplicación ************ */
@@ -553,8 +564,9 @@ img {
     font-size: 18rem;
   }
 
-  /* ************ Multiplicación ************ */
-  .form-sum-container {
+  /* ************ Suma ************ */
+  .form-sum-container,
+  .form-subtraction-container {
     margin: 2rem 0;
   }
   /* ************ Multiplicación ************ */

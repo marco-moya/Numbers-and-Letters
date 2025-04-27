@@ -29,22 +29,22 @@
     </nav>
   </header>
 
-  <main class="main-container" id="sum-page">
-    <form action="" class="form-sum-container">
+  <main class="main-container" id="subtraction-page">
+    <form action="" class="form-subtraction-container">
       <div class="addend-container"></div>
-      <div class="input-sum-container"></div>
-      <div class="btn-sum-container">
-        <button type="button" class="btn btn-result btn-mul" id="btn-sum-result">Evaluar</button>
-        <p class="sum-result hidden" id="sum-result">Res</p>
-        <button type="button" class="btn" id="btn-sum-reset">
+      <div class="input-subtraction-container"></div>
+      <div class="btn-subtraction-container">
+        <button type="button" class="btn btn-result btn-mul" id="btn-subtraction-result">Evaluar</button>
+        <p class="subtraction-result hidden" id="subtraction-result">Res</p>
+        <button type="button" class="btn" id="btn-subtraction-reset">
           <i class="fa-solid fa-arrow-rotate-right"></i>
         </button>
       </div>
     </form>
-    <button type="button" class="btn btn-edit" id="btn-sum-edit">
+    <button type="button" class="btn btn-edit" id="btn-subtraction-edit">
       <i class="fa-solid fa-pen-to-square"></i>
     </button>
-    <section class="modal sum-edit-container">
+    <section class="modal subtraction-edit-container">
       <div class="modal-content">
         <div class="modal-header">
           <h2>Editar Suma</h2>
@@ -65,18 +65,18 @@
           <div class="modal-section">
             <p>Filas</p>
             <div class="modal-controls">
-              <button type="button" class="btn" id="btn-decrease-row">
+              <button type="button" class="btn" id="btn-decrease-row" disabled>
                 <i class="fa-solid fa-circle-minus"></i>
               </button>
               <span class="modal-value" id="value-row"></span>
-              <button type="button" class="btn" id="btn-increase-row">
+              <button type="button" class="btn" id="btn-increase-row" disabled>
                 <i class="fa-solid fa-circle-plus"></i>
               </button>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-close" id="btn-sum-edit-close">Aceptar</button>
+          <button type="button" class="btn btn-close" id="btn-subtraction-edit-close">Aceptar</button>
         </div>
       </div>
     </section>
