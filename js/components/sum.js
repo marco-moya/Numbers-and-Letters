@@ -16,6 +16,7 @@ export function sum() {
     const $contenedor = document.querySelector(elemento);
     const fontSizeInicial = 48; // Tamaño de fuente inicial
     const $inputs = $inputSumContainer.querySelectorAll("input[type='number']");
+    const $span = d.querySelector(".plus-sign");
     let fontSize = parseInt(window.getComputedStyle($contenedor).fontSize);
     
     // Ajustar el tamaño del Gap según el número de columnas
@@ -30,6 +31,19 @@ export function sum() {
       $inputSumContainer.style.rowGap = "0.3rem";
     }
     
+    // Ajusta la posición del signo más según el número de columnas
+    if (column <= 3) {
+      $span.style.left = "5rem";
+    } else if (column === 4) {
+      $span.style.left = "4rem";
+    } else if (column === 5) {
+      $span.style.left = "2rem";
+    } else if (column === 6) {
+      $span.style.left = "0";
+    } else {
+      $span.style.left = "-1rem";
+    }
+    
     // Reducir el tamaño de fuente si el contenido desborda
     while (($contenedor.scrollHeight > $contenedor.clientHeight || $contenedor.scrollWidth > $contenedor.clientWidth) && fontSize > 32) {
       fontSize--;
@@ -42,6 +56,10 @@ export function sum() {
       fontSize++;
       $contenedor.style.fontSize = fontSize + "px";
       $sumResult.style.fontSize = fontSize + "px";
+    }
+
+    if (row >=8 && column <= 7) {
+      $contenedor.style.fontSize = "2rem";$contenedor.style.fontSize = "40px";
     }
 
     // Ajustar el tamaño de los inputs

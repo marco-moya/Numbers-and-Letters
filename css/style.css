@@ -47,6 +47,11 @@ img {
 .header {
   width: 100%;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.header-logo {
+  width: 200px;
 }
 
 /* Estilos para el menú de navegación */
@@ -268,7 +273,7 @@ img {
     .minus-sign {
     position: absolute;
     bottom: calc(50% - 1.5rem);
-    left: 2rem;
+    left: 5rem;
   }
   & :nth-child(n):last-child {
     border-bottom: 3px solid;
@@ -519,8 +524,12 @@ img {
 @media screen and (min-width: 40rem) {
 
   .header {
-    display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .header-logo {
+    margin-left: 1rem;
   }
 
   .off-canvas-menu {

@@ -17,6 +17,7 @@ export function subtraction() {
     const $contenedor = document.querySelector(elemento);
     const fontSizeInicial = 48; // Tamaño de fuente inicial
     const $inputs = $inputSumContainer.querySelectorAll("input[type='number']");
+    const $span = d.querySelector(".minus-sign");
     let fontSize = parseInt(window.getComputedStyle($contenedor).fontSize);
     
     // Ajustar el tamaño del Gap según el número de columnas
@@ -29,6 +30,19 @@ export function subtraction() {
     } else {
       $inputSumContainer.style.columnGap = "0.3rem";
       $inputSumContainer.style.rowGap = "0.3rem";
+    }
+
+    // Ajusta la posición del signo menos según el número de columnas
+    if (column <= 3) {
+      $span.style.left = "5rem";
+    } else if (column === 4) {
+      $span.style.left = "4rem";
+    } else if (column === 5) {
+      $span.style.left = "2rem";
+    } else if (column === 6) {
+      $span.style.left = "0";
+    } else {
+      $span.style.left = "-1rem";
     }
     
     // Reducir el tamaño de fuente si el contenido desborda
