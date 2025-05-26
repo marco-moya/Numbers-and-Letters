@@ -26,5 +26,3 @@ d.addEventListener("DOMContentLoaded", (e) => {
     syllablesRandom();
   }
 })
-
-console.log("Página cargada correctamente.");

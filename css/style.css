@@ -249,8 +249,6 @@ img {
 /* ************ Suma ************ */
 .form-sum-container,
 .form-subtraction-container {
-  width: 80%;
-  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,18 +260,19 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2.4rem;
   position: relative;
   & label {
     padding-left: 2rem;
     text-align: end;
-    letter-spacing: 1.5rem;
+    letter-spacing: 1rem;
   }
   & .plus-sign,
     .minus-sign {
     position: absolute;
-    bottom: calc(50% - 1.5rem);
-    left: 5rem;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
   }
   & :nth-child(n):last-child {
     border-bottom: 3px solid;
@@ -284,15 +283,14 @@ img {
 .input-sum-container,
 .input-subtraction-container {
   width: 100%;
-  padding-right: 2rem;
   margin: 1rem 0;
   display: flex;
   justify-content: center;
   gap: 0.3rem;
   & input {
-    width: 3rem;
-    height: 3rem;
-    font-size: 3rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2.4rem;
     text-align: center;
     border: none;
     background-color: var(--text-color);
@@ -577,6 +575,15 @@ img {
   .form-sum-container,
   .form-subtraction-container {
     margin: 2rem 0;
+  }
+  .addend-container label {
+    font-size: 3rem;
+  }
+  .input-sum-container input,
+  .input-subtraction-container input {
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
   }
   /* ************ Multiplicación ************ */
   .mult span {

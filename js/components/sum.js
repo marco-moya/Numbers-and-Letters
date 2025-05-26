@@ -12,64 +12,6 @@ export function sum() {
   let sumTotal;
   let userSumTotal;
 
-  function adjustSize(elemento) {
-    const $contenedor = document.querySelector(elemento);
-    const fontSizeInicial = 48; // Tamaño de fuente inicial
-    const $inputs = $inputSumContainer.querySelectorAll("input[type='number']");
-    const $span = d.querySelector(".plus-sign");
-    let fontSize = parseInt(window.getComputedStyle($contenedor).fontSize);
-    
-    // Ajustar el tamaño del Gap según el número de columnas
-    if (column === 8) {
-      $inputSumContainer.style.columnGap = "0.5rem";
-      $inputSumContainer.style.rowGap = "0.5rem";
-    } else if (column === 9) {
-      $inputSumContainer.style.columnGap = "0.6rem";
-      $inputSumContainer.style.rowGap = "0.6rem";
-    } else {
-      $inputSumContainer.style.columnGap = "0.3rem";
-      $inputSumContainer.style.rowGap = "0.3rem";
-    }
-    
-    // Ajusta la posición del signo más según el número de columnas
-    if (column <= 3) {
-      $span.style.left = "5rem";
-    } else if (column === 4) {
-      $span.style.left = "4rem";
-    } else if (column === 5) {
-      $span.style.left = "2rem";
-    } else if (column === 6) {
-      $span.style.left = "0";
-    } else {
-      $span.style.left = "-1rem";
-    }
-    
-    // Reducir el tamaño de fuente si el contenido desborda
-    while (($contenedor.scrollHeight > $contenedor.clientHeight || $contenedor.scrollWidth > $contenedor.clientWidth) && fontSize > 32) {
-      fontSize--;
-      $contenedor.style.fontSize = fontSize + "px";
-      $sumResult.style.fontSize = fontSize + "px";
-    }
-    
-    // Incrementar el tamaño de fuente si el contenido no desborda y no ha alcanzado el tamaño inicial
-    while (($contenedor.scrollHeight <= $contenedor.clientHeight && $contenedor.scrollWidth <= $contenedor.clientWidth) && fontSize < fontSizeInicial) {
-      fontSize++;
-      $contenedor.style.fontSize = fontSize + "px";
-      $sumResult.style.fontSize = fontSize + "px";
-    }
-
-    if (row >=8 && column <= 7) {
-      $contenedor.style.fontSize = "2rem";$contenedor.style.fontSize = "40px";
-    }
-
-    // Ajustar el tamaño de los inputs
-    $inputs.forEach(input => {
-      input.style.fontSize = `${fontSize}px`;
-      input.style.width = `${parseFloat(fontSize) }px`;
-      input.style.height = `${parseFloat(fontSize) }px`;
-    });
-  }
-
   function resetAddends() {
     $addendContainer.innerHTML = "";
     $inputSumContainer.innerHTML = "";
@@ -93,7 +35,6 @@ export function sum() {
       $input.setAttribute("max", `${9}`);
       $inputSumContainer.appendChild($input);
     }
-    adjustSize(".addend-container");
   }
 
   function sumAddends() {
@@ -171,7 +112,7 @@ export function sum() {
       d.querySelector(".modal").classList.remove("show-modal");
     }
     if (e.target.matches("#btn-increase-colum") || e.target.matches("#btn-increase-colum i")) {
-      if ($valueColumn.textContent < 9) {
+      if ($valueColumn.textContent < 6) {
         column++;
         $valueColumn.textContent = column;
         resetAddends();
@@ -185,7 +126,7 @@ export function sum() {
       }
     }
     if (e.target.matches("#btn-increase-row") || e.target.matches("#btn-increase-row i")) {
-      if ($valueRow.textContent < 9) {
+      if ($valueRow.textContent < 6) {
         row++;
         $valueRow.textContent = row;
         resetAddends();
